@@ -1,0 +1,412 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+    --beige: #E8D9B5;
+    --gris: #A89F94;
+    --rosado: #E8A9A9;
+    --rosado-fuerte: #E94B7D;
+    --durazno: #F4BE6A;
+    --lila: #8F95D3;
+    --lila-claro: #A6A8D7;
+    --rosado-claro: #E3A5B8;
+    --blanco: #ffffff;
+    --texto: #3a3340;
+    --texto-suave: #6b6475;
+    --borde: #d9cfe8;
+    --sombra: rgba(143, 149, 211, 0.15);
+    --sombra-hover: rgba(143, 149, 211, 0.30);
+    --verde: #4caf87;
+    --rojo: #e05c7a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--beige) 0%, var(--rosado-claro) 100%);
+    min-height: 100vh;
+    color: var(--texto);
+    padding: 24px;
+}
+
+
+   CONTENEDOR PRINCIPAL
+
+.container {
+    background: var(--blanco);
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 24px var(--sombra);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+   TÍTULOS
+
+h1, h2, h3 {
+    color: var(--texto);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--lila-claro);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+h2::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 22px;
+    background: linear-gradient(180deg, var(--lila), var(--rosado-fuerte));
+    border-radius: 4px;
+}
+
+hr {
+    border: none;
+    border-top: 2px dashed var(--borde);
+    margin: 28px 0;
+}
+
+/* =============================================
+   FORMULARIOS
+   ============================================= */
+form {
+    background: #faf9fd;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid var(--borde);
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: var(--texto);
+    background: var(--blanco);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-bottom: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--lila);
+    box-shadow: 0 0 0 3px rgba(143, 149, 211, 0.2);
+}
+
+/* =============================================
+   BOTONES
+   ============================================= */
+.btn,
+button[type="submit"],
+button[name="guardar"],
+button[name="actualizar"],
+button[name="guardarestudiante"],
+button[name="actualizarestudiante"],
+button[name="guardarmaestro"],
+button[name="actualizarmaestro"],
+button[name="login"],
+button[name="manual"],
+button[name="programar"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+button[type="submit"],
+button[name="guardar"],
+button[name="guardarestudiante"],
+button[name="guardarmaestro"] {
+    background: linear-gradient(135deg, var(--lila), #7178c4);
+    box-shadow: 0 4px 12px rgba(113, 120, 196, 0.35);
+}
+
+button[name="actualizar"],
+button[name="actualizarestudiante"],
+button[name="actualizarmaestro"] {
+    background: linear-gradient(135deg, var(--durazno), #e8a83a);
+    color: var(--texto);
+    box-shadow: 0 4px 12px rgba(244, 190, 106, 0.4);
+}
+
+button[name="login"] {
+    background: linear-gradient(135deg, var(--rosado-fuerte), #c73968);
+    box-shadow: 0 4px 12px rgba(233, 75, 125, 0.4);
+    width: 100%;
+    justify-content: center;
+}
+
+button[name="manual"],
+button[name="programar"] {
+    background: linear-gradient(135deg, var(--lila), #7178c4);
+    box-shadow: 0 4px 12px rgba(113, 120, 196, 0.35);
+}
+
+button[type="submit"]:hover,
+button[name="guardar"]:hover,
+button[name="actualizar"]:hover,
+button[name="login"]:hover,
+button[name="manual"]:hover,
+button[name="programar"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px var(--sombra-hover);
+}
+
+/* =============================================
+   ALERTAS / MENSAJES
+   ============================================= */
+.alerta,
+p.mensaje,
+p[style*="color:red"] {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+    border-left: 4px solid;
+}
+
+.alerta[style*="green"],
+.alerta[style*="#28a745"] {
+    background: #edfaf3;
+    border-color: var(--verde);
+    color: #2d7a5a;
+}
+
+.alerta[style*="red"],
+.alerta[style*="#dc3545"] {
+    background: #fff0f3;
+    border-color: var(--rojo);
+    color: var(--rojo);
+}
+
+p[style*="color:red"] {
+    background: #fff0f3;
+    border-color: var(--rojo);
+    color: var(--rojo) !important;
+}
+
+/* =============================================
+   TABLAS
+   ============================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px var(--sombra);
+}
+
+thead th,
+tr th {
+    background: linear-gradient(135deg, var(--lila), #7178c4);
+    color: var(--blanco);
+    padding: 13px 16px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 800;
+    text-align: left;
+    border: none;
+}
+
+tbody td,
+tr td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0edf7;
+    font-size: 0.92rem;
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:nth-child(even),
+tr:nth-child(even) td {
+    background-color: #faf8ff;
+}
+
+tbody tr:hover td {
+    background-color: #f3f0fb;
+    transition: background 0.15s;
+}
+
+/* =============================================
+   LINKS DE ACCIÓN EN TABLAS
+   ============================================= */
+a[href*="editar"],
+a[href*="eliminar"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 2px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+a[href*="editar"] {
+    background: rgba(244, 190, 106, 0.15);
+    color: #b07c10;
+    border: 1.5px solid var(--durazno);
+}
+
+a[href*="eliminar"],
+.btn-del {
+    background: rgba(224, 92, 122, 0.1);
+    color: var(--rojo) !important;
+    border: 1.5px solid var(--rojo);
+    text-decoration: none !important;
+    font-weight: 700 !important;
+}
+
+a[href*="editar"]:hover,
+a[href*="eliminar"]:hover,
+.btn-del:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px var(--sombra);
+}
+
+/* =============================================
+   SELECT GRANDE (inscripciones/calificaciones)
+   ============================================= */
+select[style*="width: 100%"] {
+    width: 100% !important;
+    margin-bottom: 16px;
+}
+
+/* =============================================
+   CARD (login/respaldo)
+   ============================================= */
+.card {
+    background: var(--blanco);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 6px 30px rgba(143, 149, 211, 0.2);
+    border: 1px solid var(--borde);
+}
+
+.card h2 {
+    font-size: 1.6rem;
+    justify-content: center;
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 24px;
+}
+
+.card h2::before {
+    display: none;
+}
+
+/* =============================================
+   ESTADO APROBADO / REPROBADO
+   ============================================= */
+span[style*="color: green"] {
+    background: #edfaf3;
+    color: #2d7a5a !important;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+span[style*="color: red"] {
+    background: #fff0f3;
+    color: var(--rojo) !important;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+/* =============================================
+   LINK CANCELAR
+   ============================================= */
+a[href$="carreras3.php"],
+a[href$="materias3.php"],
+a[href$="grupos3.php"] {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #f0edf7;
+    color: var(--texto-suave);
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: background 0.2s;
+}
+
+a[href$="carreras3.php"]:hover,
+a[href$="materias3.php"]:hover,
+a[href$="grupos3.php"]:hover {
+    background: var(--borde);
+}
+
+/* =============================================
+   SCROLLBAR PERSONALIZADO
+   ============================================= */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f0edf7;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--lila-claro);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--lila);
+}

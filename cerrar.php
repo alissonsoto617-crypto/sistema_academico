@@ -6,6 +6,6 @@ session_unset();
 session_destroy();
 
 // Redirigir al login
-header("Location: login3.php");
+header("Location: index.php");
 exit();
 ?>
